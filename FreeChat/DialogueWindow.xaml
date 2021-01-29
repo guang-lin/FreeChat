@@ -1,0 +1,121 @@
+﻿<Window x:Class="FreeChat.DialogueWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FreeChat"
+        mc:Ignorable="d"
+        MinWidth="380" Width="400" MinHeight="520" Height="520">
+    
+    <Grid HorizontalAlignment="Stretch" Margin="0,0,0,10" VerticalAlignment="Stretch" Width="Auto">
+        <!--划分布局-->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="60"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="100"/>
+        </Grid.ColumnDefinitions>
+        <!--划分布局结束-->
+
+        <!--顶栏-->
+        <Label Grid.Row="0" Grid.ColumnSpan="2" Margin="0">
+            <Label.Background>
+                <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5">
+                    <GradientStop Color="#FF9ED4B8" Offset="0.0" />
+                    <GradientStop Color="#FF1B84A3" Offset="1.0" />
+                </LinearGradientBrush>
+            </Label.Background>
+        </Label>
+        <!--顶栏结束-->
+        
+        <!--对话列表-->
+        <ListBox x:Name="dialogueList" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Row="1" Grid.ColumnSpan="2" Style="{DynamicResource ListBoxStyle1}">
+            <!--接收消息1-->
+            <ListBoxItem MinHeight="50" Height="Auto" HorizontalAlignment="Left" Style="{DynamicResource ListBoxItemStyle1}">
+                <ListBoxItem.Content>
+                    <DockPanel>
+                        <Border DockPanel.Dock="Left" Width="50" Height="50" Margin="10,4,4,4" Style="{DynamicResource BorderStyle1}">
+                            <Border.Background>
+                                <ImageBrush ImageSource="Resources/Images/Headers/fqq.jpg"/>
+                            </Border.Background>
+                        </Border>
+                        <Border DockPanel.Dock="Left" Width="Auto" Height="Auto" MaxWidth="250" Margin="4,12,4,4" Background="#FF9ED4B8" Style="{DynamicResource BorderStyle2}">
+                            <TextBlock HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Width="Auto" Margin="10,10,10,10" TextWrapping="Wrap" FontSize="14">
+                                你好啊，我是范祺琪，饭饭饭饭饭饭饭饭饭饭饭饭饭饭饭
+                            </TextBlock>
+                        </Border>
+                    </DockPanel>
+                </ListBoxItem.Content>
+            </ListBoxItem>
+            <!--接收消息1结束-->
+
+            <!--接收消息2-->
+            <ListBoxItem MinHeight="50" Height="Auto" HorizontalAlignment="Left" Style="{DynamicResource ListBoxItemStyle1}">
+                <ListBoxItem.Content>
+                    <DockPanel>
+                        <!--头像-->
+                        <Border DockPanel.Dock="Left" Width="50" Height="50" Margin="10,4,4,4" Style="{DynamicResource BorderStyle1}">
+                            <Border.Background>
+                                <ImageBrush ImageSource="Resources/Images/Headers/fqq.jpg"/>
+                            </Border.Background>
+                        </Border>
+                        <!--头像结束-->
+                        
+                        <!--气泡-->
+                        <Border DockPanel.Dock="Left" Width="Auto" Height="Auto" MaxWidth="250" Margin="4,12,4,4" Background="#FF9ED4B8" Style="{DynamicResource BorderStyle2}">
+                            <TextBlock HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Width="Auto" Margin="10,10,10,10" TextWrapping="Wrap" FontSize="14">
+                                我懒，我很懒
+                            </TextBlock>
+                        </Border>
+                        <!--气泡结束-->
+                    </DockPanel>
+                </ListBoxItem.Content>
+            </ListBoxItem>
+            <!--接收消息2结束-->
+
+            <!--接收消息3-->
+            <ListBoxItem MinHeight="50" Height="Auto" HorizontalAlignment="Left" Style="{DynamicResource ListBoxItemStyle1}">
+                <ListBoxItem.Content>
+                    <DockPanel>
+                        <Border DockPanel.Dock="Left" Width="50" Height="50" Margin="10,4,4,4" Style="{DynamicResource BorderStyle1}">
+                            <Border.Background>
+                                <ImageBrush ImageSource="Resources/Images/Headers/fqq.jpg"/>
+                            </Border.Background>
+                        </Border>
+                        <Border DockPanel.Dock="Left" Width="Auto" Height="Auto" MaxWidth="250" Margin="4,12,4,4" Background="#FF9ED4B8" Style="{DynamicResource BorderStyle2}">
+                            <TextBlock HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Width="Auto" Margin="10,10,10,10" TextWrapping="Wrap" FontSize="14">
+                                我啥也不会
+                            </TextBlock>
+                        </Border>
+                    </DockPanel>
+                </ListBoxItem.Content>
+            </ListBoxItem>
+            <!--接收消息3结束-->
+
+            <!--发送消息1-->
+            <ListBoxItem MinHeight="50" Height="Auto" HorizontalAlignment="Right" Style="{DynamicResource ListBoxItemStyle1}">
+                <ListBoxItem.Content>
+                    <DockPanel>
+                        <Border DockPanel.Dock="Right" Width="50" Height="50" Margin="4,4,10,4" Style="{DynamicResource BorderStyle1}">
+                            <Border.Background>
+                                <ImageBrush ImageSource="Resources/Images/Headers/lgl.jpg"/>
+                            </Border.Background>
+                        </Border>
+                        <Border DockPanel.Dock="Right" Width="Auto" Height="Auto" MaxWidth="250" Margin="4,12,4,4" Background="#FF4BA1AB" Style="{DynamicResource BorderStyle2}">
+                            <TextBlock HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Width="Auto" Margin="10,10,10,10" TextWrapping="Wrap" FontSize="14">
+                                懒吧
+                            </TextBlock>
+                        </Border>
+                    </DockPanel>
+                </ListBoxItem.Content>
+            </ListBoxItem>
+            <!--发送消息1结束-->
+        </ListBox>
+        <!--对话列表结束-->
+        <TextBox x:Name="messageTextBox" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" MinWidth="200" Width="Auto" Margin="10,0,0,0" Padding="10,10,10,10" Grid.Row="2" TextWrapping="Wrap" FontSize="14" Style="{DynamicResource TextBoxStyle1}"/>
+        <Button Content="发送" HorizontalAlignment="Right" Margin="0,0,10,0" Grid.Row="2" Grid.Column="1" VerticalAlignment="Bottom" Width="75" Style="{DynamicResource ButtonStyle1}" Height="34" RenderTransformOrigin="0.867,0.471" Click="Button_Click"/>
+    </Grid>
+</Window>
